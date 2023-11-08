@@ -1,3 +1,47 @@
+:root {
+    --border: 10px solid;
+}
+
 body {
-    background-color: white;
+    border: var(--border) red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+header {
+    border: var(--border) green;
+    & > h1 {
+        color: red;
+    }
+    & > h2 {
+        color: blue;
+    }
+}
+nav {
+    border: var(--border) blue;
+}
+main {
+    border: var(--border) yellow;
+    }
+    & > h3 {
+        color: green;
+    }
+    & > h4 {
+        color: yellow;
+    }
+    & > h5 {
+        color: orange;
+    }
+    & > h6 {
+        color: purple;
+    }
+    & > p {
+        color: red;
+    }
+footer {
+    border: var(--border) cyan;
 }
