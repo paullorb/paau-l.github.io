@@ -5,15 +5,17 @@
 body {
     border: var(--border) red;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-    "header header nav"
-    "main main main"
-    "footer footer footer";
+    gap: 100px 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "header header header"
+        "nav main main"
+        "footer footer footer";
 }
 header {
     border: var(--border) green;
+    grid-area: header;
     & > h1 {
         color: red;
     }
@@ -23,9 +25,11 @@ header {
 }
 nav {
     border: var(--border) blue;
+    grid-area: nav;
 }
 main {
     border: var(--border) yellow;
+    grid-area: main;
     }
     & > h3 {
         color: green;
@@ -44,4 +48,5 @@ main {
     }
 footer {
     border: var(--border) cyan;
+    grid-area: footer;
 }
