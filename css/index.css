@@ -4,14 +4,6 @@
 
 body {
     border: var(--border) red;
-    display: grid;
-    gap: 100px 50px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: 
-        "header header header"
-        "nav main main"
-        "footer footer footer";
 }
 header {
     border: var(--border) green;
