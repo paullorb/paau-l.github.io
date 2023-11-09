@@ -12,23 +12,23 @@ section {
 }
 
 #objective {
-    border: var(--border) blue);
+    border: var(--border) blue;
 }
 
 #education {
-    border: var(--border) green);
+    border: var(--border) green;
 }
 
 #certificates {
-    border: var(--border) cyan);
+    border: var(--border) cyan;
 }
 
 #professional-experience {
-    border: var(--border) yellow);
+    border: var(--border) yellow;
 }
 
 #additional-skills {
-    border: var(--border) orange);
+    border: var(--border) orange;
 }
 
 #interests {
@@ -36,5 +36,5 @@ section {
 }
 
 #additional-professional-experience {
-    border: var(--border) chartreuse);
+    border: var(--border) chartreuse;
 }
