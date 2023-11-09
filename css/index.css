@@ -7,6 +7,10 @@ section {
     margin-bottom: 15px;
 }
 
+#cv {
+    border: var(--border) salmon;
+}
+
 #personal-info {
     border: var(--border) red;
 }
