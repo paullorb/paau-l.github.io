@@ -1,56 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let today = new Date();
-    let currentMonth = today.getMonth();
-    let currentYear = today.getFullYear();
+    // Table creation function
+    function createTable(rows, cols) {
+        let table = document.createElement('table');
+        table.style.width = '100%';
+        table.setAttribute('border', '1');
 
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        for (let i = 0; i < rows; i++) {
+            let tr = table.insertRow();
 
-    let monthAndYear = document.getElementById("monthAndYear");
-    showCalendar(currentMonth, currentYear);
-
-    function showCalendar(month, year) {
-        let firstDay = new Date(year, month).getDay();
-        let daysInMonth = 32 - new Date(year, month, 32).getDate();
-
-        let tbl = document.getElementById("days"); // body of the calendar
-
-        // Clearing all previous cells
-        tbl.innerHTML = "";
-
-        // Filling data about month and in the page via DOM.
-        monthAndYear.innerHTML = months[month] + " " + year;
-
-        // Creating all cells
-        let date = 1;
-        for (let i = 0; i < 6; i++) {
-            // Creates a table row
-            let row = document.createElement("tr");
-
-            //Creating individual cells, filing them up with data.
-            for (let j = 0; j < 7; j++) {
-                if (i === 0 && j < firstDay) {
-                    let cell = document.createElement("td");
-                    let cellText = document.createTextNode("");
-                    cell.appendChild(cellText);
-                    row.appendChild(cell);
-                }
-                else if (date > daysInMonth) {
-                    break;
-                }
-
-                else {
-                    let cell = document.createElement("td");
-                    let cellText = document.createTextNode(date);
-                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                        cell.classList.add("bg-info");
-                    } // color today's date
-                    cell.appendChild(cellText);
-                    row.appendChild(cell);
-                    date++;
-                }
+            for (let j = 0; j < cols; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(`Row ${i + 1}, Column ${j + 1}`));
+                td.style.textAlign = 'center';
             }
-
-            tbl.appendChild(row); // appending each row into calendar body.
         }
+
+        return table;
     }
+
+    // Append the table to the container
+    let tableContainer = document.getElementById('table-container');
+    tableContainer.appendChild(createTable(4, 7));
 });
