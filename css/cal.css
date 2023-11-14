@@ -15,3 +15,40 @@ html, body {
     width: 100%; /* Full width */
     overflow: auto; /* Adds scroll if the table is larger than the container */
 }
+/* Add this to your existing CSS file */
+
+.cell {
+    perspective: 400px;
+}
+
+.info {
+    transform: rotateX(90deg);
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(26, 188, 156, 0.1); /* Adjusted from transparentize */
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hover animations */
+.cell:hover .info {
+    transform: rotateX(0deg);
+}
+
+/* Additional styling for table cell */
+.cell {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background-color: #ECF0F1;
+    box-shadow: inset 0 2px 20px #d1d1d1;
+}
