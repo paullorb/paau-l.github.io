@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             for (let j = 0; j < cols; j++) {
                 let td = tr.insertCell();
                 td.classList.add('cell'); // Add class for styling
-        
+                
                 // Create a div for the hover effect
                 let infoDiv = document.createElement('div');
                 infoDiv.classList.add('info');
@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 td.style.textAlign = 'center';
                 td.style.height = cellHeight;
                 
+                // Add the hover effect object to each cell
+                new CellItem(td);
             }
         }
     
