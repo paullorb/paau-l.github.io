@@ -30,6 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
     
                 td.style.textAlign = 'center';
                 td.style.height = cellHeight;
+                
+                // Add hover effect
+                td.onmouseover = function() {
+                    this.style.backgroundColor = 'gray'; // Change background color on hover
+                };
+                td.onmouseout = function() {
+                    this.style.backgroundColor = ''; // Revert background color when not hovering
+                };
             }
         }
     
